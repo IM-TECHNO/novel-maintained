@@ -1,5 +1,11 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 1.0.6
+
+### Patch Changes
+
+- Bump Tiptap from `2.11.2` to `2.27.2` (adds official React 19 peer support) and `tiptap-extension-global-drag-handle` from `0.1.16` to `0.1.18` (fixes a compile break against current `@tiptap/pm` — missing `__serializeForClipboard`). Both fixes stay within their existing major version lines.
+
 ## 1.0.5
 
 ### Patch Changes
