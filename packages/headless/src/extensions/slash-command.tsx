@@ -4,7 +4,7 @@ import { ReactRenderer } from "@tiptap/react";
 import Suggestion, { type SuggestionOptions } from "@tiptap/suggestion";
 import type { RefObject } from "react";
 import type { ReactNode } from "react";
-import tippy, { type GetReferenceClientRect, type Instance, type Props } from "tippy.js";
+import tippy, { sticky, type GetReferenceClientRect, type Instance, type Props } from "tippy.js";
 import { EditorCommandOut } from "../components/editor-command";
 
 const Command = Extension.create({
@@ -58,6 +58,29 @@ const renderItems = (elementRef?: RefObject<Element> | null) => {
         interactive: true,
         trigger: "manual",
         placement: "bottom-start",
+        sticky: "reference",
+        plugins: [sticky],
+        popperOptions: {
+          strategy: "fixed",
+          modifiers: [
+            {
+              name: "flip",
+              options: {
+                fallbackPlacements: ["top-start"],
+              },
+            },
+            {
+              name: "preventOverflow",
+              options: {
+                altAxis: true,
+                tether: false,
+                padding: {
+                  top: 12,
+                },
+              },
+            },
+          ],
+        },
       });
     },
     onUpdate: (props: { editor: Editor; clientRect: GetReferenceClientRect }) => {
