@@ -15,7 +15,6 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
 
-    "downlevelIteration": true,
     "allowJs": true,
     "isolatedModules": true,
     "esModuleInterop": true,
