@@ -1,5 +1,11 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 1.0.5
+
+### Patch Changes
+
+- Pin `react`/`react-dom` as devDependencies at `18.2.0` so every react-dependent sub-dependency (`@tiptap/react`, `cmdk`, `jotai`, `react-markdown`, `react-tweet`, `tunnel-rat`) resolves against a single React instance instead of a mix of React 18 and 19, avoiding a duplicate-React-copies setup that could cause "invalid hook call" errors.
+
 ## 1.0.4
 
 ### Patch Changes
