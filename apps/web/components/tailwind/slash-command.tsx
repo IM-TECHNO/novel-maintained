@@ -14,6 +14,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { Command, createSuggestionItems, renderItems } from "novel";
+import type { RefObject } from "react";
 import { uploadFn } from "./image-upload";
 
 export const suggestionItems = createSuggestionItems([
@@ -180,9 +181,10 @@ export const suggestionItems = createSuggestionItems([
   },
 ]);
 
-export const slashCommand = Command.configure({
-  suggestion: {
-    items: () => suggestionItems,
-    render: renderItems,
-  },
-});
+export const slashCommand = (ref: RefObject<HTMLDivElement> | null) =>
+  Command.configure({
+    suggestion: {
+      items: () => suggestionItems,
+      render: () => renderItems(ref),
+    },
+  });
