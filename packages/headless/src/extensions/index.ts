@@ -27,6 +27,15 @@ const PlaceholderExtension = Placeholder.configure({
     if (node.type.name === "heading") {
       return `Heading ${node.attrs.level}`;
     }
+    // Tiptap's isNodeEmpty check is recursive, so with includeChildren
+    // enabled an empty list container (bulletList/orderedList/taskList),
+    // its item wrapper (listItem/taskItem), and its innermost paragraph
+    // are ALL considered "empty" nodes containing the cursor at the same
+    // visual position - each would render its own placeholder and overlap.
+    // Only the innermost text block should show the hint.
+    if (node.type.name !== "paragraph") {
+      return "";
+    }
     return "Press '/' for commands";
   },
   includeChildren: true,
