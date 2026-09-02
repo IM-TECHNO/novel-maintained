@@ -1,5 +1,17 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 1.0.3
+
+### Patch Changes
+
+- Fix several bugs carried over from the abandoned upstream repo:
+
+  - AI generate route now passes the built system prompt to `streamText` instead of dropping it, so AI commands actually follow their instructions.
+  - `UploadImagesPlugin` reads transaction metadata via the real `PluginKey` instead of `tr.getMeta(this)`, which never resolved and silently broke upload placeholder tracking.
+  - Slash-command popup now uses tippy's `sticky` plugin with `flip`/`preventOverflow` modifiers so it stays positioned correctly while scrolling.
+  - Removed the deprecated `downlevelIteration` compiler option (a no-op on the `ESNext` target this repo already uses, and slated for removal in TypeScript 7.0).
+  - Fixed the turbo pipeline so `dev` and `typecheck` build workspace packages first, resolving the long-standing "Cannot find module 'novel'" / "has no exported member" class of issues on a fresh clone.
+
 ## 1.0.0
 
 ### Major Changes
