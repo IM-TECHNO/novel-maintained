@@ -1,5 +1,14 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 1.0.7
+
+### Patch Changes
+
+- Fix three content-model bugs:
+  - `editable={false}` (and reactive toggles of it) had no effect after the initial render, because `@tiptap/react`'s option-sync logic overwrites the `editable` prop with the editor's own current state on every re-render. `EditorContent` now syncs it imperatively via `editor.setEditable()`.
+  - `ImageResizer` stayed interactive even when the editor was read-only; it now checks `editor.isEditable`.
+  - Empty `BulletList`/`TaskList` items showed overlapping duplicate "Press '/' for commands" placeholders, because Tiptap's recursive empty-node check paired with `includeChildren` decorated the list container, the item wrapper, and the inner paragraph all at once. Now only the paragraph renders the hint.
+
 ## 1.0.6
 
 ### Patch Changes
