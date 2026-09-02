@@ -2,7 +2,7 @@
 
 import { Command, CommandInput } from "@/components/tailwind/ui/command";
 
-import { useCompletion } from "ai/react";
+import { useCompletion } from "@ai-sdk/react";
 import { ArrowUp } from "lucide-react";
 import { useEditor } from "novel";
 import { addAIHighlight } from "novel";
@@ -29,12 +29,7 @@ export function AISelector({ onOpenChange }: AISelectorProps) {
   const { completion, complete, isLoading } = useCompletion({
     // id: "novel",
     api: "/api/generate",
-    onResponse: (response) => {
-      if (response.status === 429) {
-        toast.error("You have reached your request limit for the day.");
-        return;
-      }
-    },
+    streamProtocol: "text",
     onError: (e) => {
       toast.error(e.message);
     },

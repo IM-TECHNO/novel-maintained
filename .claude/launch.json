@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "novel-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["pnpm", "--filter", "novel-next-app", "dev"],
+      "port": 3000
+    }
+  ]
+}

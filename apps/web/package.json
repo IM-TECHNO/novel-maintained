@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.1.0",
+    "@ai-sdk/openai": "^4.0.56",
+    "@ai-sdk/react": "^4.0.93",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-scroll-area": "^1.0.5",
@@ -23,19 +24,17 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/blob": "^0.22.1",
     "@vercel/kv": "^1.0.1",
-    "ai": "^3.0.12",
+    "ai": "^7.0.90",
     "autoprefixer": "^10.4.17",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^1.0.4",
-    "eventsource-parser": "^1.1.2",
     "highlight.js": "^11.9.0",
     "lowlight": "^3.1.0",
     "lucide-react": "^0.358.0",
     "next": "15.1.4",
     "next-themes": "^0.2.1",
     "novel": "workspace:^",
-    "openai": "^4.28.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^9.0.1",
@@ -45,7 +44,8 @@
     "tippy.js": "^6.3.7",
     "ts-pattern": "^5.0.8",
     "typescript": "^5.4.2",
-    "use-debounce": "^10.0.0"
+    "use-debounce": "^10.0.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.2",
