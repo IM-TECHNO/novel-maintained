@@ -1,5 +1,11 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 1.0.4
+
+### Patch Changes
+
+- Bump `react-tweet` to fix a crash that took down the whole editor whenever a tweet embed had no hashtags, links, mentions, or media — Twitter's syndication API returns `entities: {}` for those, and `react-tweet@3.2.1` iterated the missing sub-fields with no guard. Fixed upstream in `react-tweet@3.3.1`.
+
 ## 1.0.3
 
 ### Patch Changes
