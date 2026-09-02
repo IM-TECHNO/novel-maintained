@@ -22,7 +22,8 @@
     },
     "typecheck": {
       "dependsOn": [
-        "^topo"
+        "^topo",
+        "^build"
       ],
       "outputs": []
     },
@@ -48,6 +49,9 @@
     },
     "check-types": {},
     "dev": {
+      "dependsOn": [
+        "^build"
+      ],
       "cache": false,
       "persistent": true
     },
